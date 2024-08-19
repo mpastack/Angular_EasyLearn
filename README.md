@@ -1,7 +1,9 @@
 # Angular_EasyLearn
 curated collection of Angular free resources offering advanced guides for developers at all skill levels. Explore official documentation, example projects, and community support to enhance your Angular expertise.
-
-
+-------------
+using Free Api -https://jsonplaceholder.typicode.com/
+-https://reqres.in/
+--------------
 Difference between Constructor and ngOnInit
 https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit/35763811#35763811
 
@@ -9,6 +11,9 @@ https://stackoverflow.com/questions/35763730/difference-between-constructor-and-
 	
 What is Dependency Injection in Angular?
 https://www.c-sharpcorner.com/article/what-is-dependency-injection-in-angular/
+
+Sharing data between child and parent directives and components
+https://v17.angular.io/guide/inputs-outputs
 
 
 What is observable, observer and subscribe in angular?
