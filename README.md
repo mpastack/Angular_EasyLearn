@@ -29,4 +29,7 @@ each time, when the observable passes a not a message it is received by Observer
 https://stackoverflow.com/questions/51520584/what-is-observable-observer-and-subscribe-in-angular
 
 
+--
+https://jasonwatmore.com/post/2022/11/29/angular-14-user-registration-and-login-example-tutorial#account-register-component-ts
+https://stackblitz.com/edit/angular-17-reactive-form-validation?file=src%2Fapp%2Fapp.component.html
 
