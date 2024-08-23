@@ -7,6 +7,8 @@ using Free Api -https://jsonplaceholder.typicode.com/
 Difference between Constructor and ngOnInit
 https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit/35763811#35763811
 
+https://www.syncfusion.com/angular-components
+
 CRUD
 https://www.bezkoder.com/angular-17-crud-example/
 
