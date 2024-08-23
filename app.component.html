@@ -1,0 +1,264 @@
+<!-- <div class="row m-2">
+  
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" (ngSubmit)="onReset()">
+
+      <div class="col-md-4">
+        <label for="Id">Id:</label>
+        
+        <input
+          id="userId"
+          class="form-control "
+          formControlName="id"
+          placeholder="Your Id"
+          [ngClass]="{ 'is-invalid': submitted && f['id'].errors }"
+        />
+        @if (submitted && f['id'].errors) {
+          <div class="invalid-feedback">
+            @if (f['id'].errors['required']) {
+            <div>id is required</div>
+            }
+          </div>
+          }
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Email</label>
+        <input
+       
+        formControlName="email"
+        placeholder="Email"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        />
+        @if (submitted && f['email'].errors) {
+        <div class="invalid-feedback">
+          @if (f['email'].errors['required']) {
+          <div>Fullname is required</div>
+          }
+        </div>
+        }
+      </div>
+
+
+      <div class="form-group col-md-4">
+        <label>First Name</label>
+        <input
+        id="first_name"
+        formControlName="first_name"
+        placeholder="First Name"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }"
+        />
+        @if (submitted && f['first_name'].errors) {
+        <div class="invalid-feedback">
+          @if (f['first_name'].errors['required']) {
+          <div>Fullname is required</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Last Name</label>
+        <input
+        id="last_Name"
+        formControlName="last_name"
+        placeholder="Last Name"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }"
+        />
+        @if (submitted && f['last_name'].errors) {
+        <div class="invalid-feedback">
+          @if (f['last_name'].errors['required']) {
+          <div>Lastname is required</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Avatar</label>
+        <input
+        id="avatar"
+        formControlName="avatar"
+        placeholder="Avatar"
+        type="text"
+        class="form-control "
+        [ngClass]="{ 'is-invalid': submitted && f['avatar'].errors }"
+        />
+        @if (submitted && f['avatar'].errors) {
+        <div class="invalid-feedback">
+          @if (f['avatar'].errors['required']) {
+          <div>Avatar is required</div>
+          }
+        </div>
+        }
+      </div>
+
+     <button type="submit" class="btn btn-primary m-2">Submit</button>
+    </form>
+  
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Avathar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (row of apiDatas; track $index) {
+    <tr>
+      <td>{{ row.id }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.first_name }}</td>
+      <td>{{ row.last_name }}</td>
+      <td><img [src]="row.avatar" alt="Avatar" width="50" height="50" /></td>
+    </tr>
+    }
+  </tbody>
+</table> -->
+
+<div >
+ 
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="row m-2">
+    <div class="col-4">
+      <label for="Id">Id:</label>
+      <input
+        id="id"
+        class="form-control"
+        formControlName="id"
+        placeholder="Your Id"
+        [ngClass]="{ 'is-invalid': submitted && f['id'].errors }"
+      />
+      <div *ngIf="submitted && f['id'].errors" class="invalid-feedback">
+        <div *ngIf="f['id'].errors['required']">Id is required</div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <label>Email:</label>
+      <input
+        formControlName="email"
+        placeholder="Email"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+      />
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Invalid email format</div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <label>First Name:</label>
+      <input
+        id="first_name"
+        formControlName="first_name"
+        placeholder="First Name"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }"
+      />
+      <div *ngIf="submitted && f['first_name'].errors" class="invalid-feedback">
+        <div *ngIf="f['first_name'].errors['required']">First Name is required</div>
+        <div *ngIf="f['first_name'].errors['minlength']">First Name must be at least 6 characters long</div>
+        <div *ngIf="f['first_name'].errors['maxlength']">First Name cannot be more than 20 characters</div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <label>Last Name:</label>
+      <input
+        id="last_name"
+        formControlName="last_name"
+        placeholder="Last Name"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }"
+      />
+      <div *ngIf="submitted && f['last_name'].errors" class="invalid-feedback">
+        <div *ngIf="f['last_name'].errors['required']">Last Name is required</div>
+        <div *ngIf="f['last_name'].errors['minlength']">Last Name must be at least 6 characters long</div>
+        <div *ngIf="f['last_name'].errors['maxlength']">Last Name cannot be more than 20 characters</div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <label>Avatar URL:</label>
+      <input
+        id="avatar"
+        formControlName="avatar"
+        placeholder="Avatar URL"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['avatar'].errors }"
+      />
+      <div *ngIf="submitted && f['avatar'].errors" class="invalid-feedback">
+        <div *ngIf="f['avatar'].errors['required']">Avatar URL is required</div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <label>Date:</label>
+      <input
+        id="created_date"
+        formControlName="created_date"
+        placeholder="Created Date"
+        type="date"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['created_date'].errors }"
+      />
+      <div *ngIf="submitted && f['created_date'].errors" class="invalid-feedback">
+        <div *ngIf="f['created_date'].errors['required']">Date is required</div>
+      </div>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-primary m-2">Submit</button>
+    <button type="button" (click)="onReset()" class="btn btn-secondary m-2">Reset</button>
+  </form>
+</div>
+
+
+<table class="table mt-2">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Email</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Avatar</th>
+      <th>Date</th>
+      <th>Action</th>
+     
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of apiDatas;let i = index">
+      <td>{{ row.id }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.first_name }}</td>
+      <td>{{ row.last_name }}</td>
+      <td><img [src]="row.avatar" alt="Avatar" width="50" height="50" /></td>
+      <td>{{ row.created_date | date:"dd / MMM / yyyy" }}</td>
+      <td>
+        <button (click)="editRow(i)" class="btn btn-warning btn-sm">Edit</button>
+      
+        <button (click)="deleteRow(i)" class="btn btn-danger btn-sm">Delete</button>
+      </td>
+    
+
+    </tr>
+  </tbody>
+</table>
